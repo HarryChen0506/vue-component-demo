@@ -28,8 +28,8 @@ const gesture = {
 // 函数截留
 const throttle = function (func, deltaX) {
   let lastCalledAt = new Date().getTime();
-  let that = this;  
-  return function(e) {    
+  // let that = this;  
+  return function() {    
     // func.apply(that, arguments);
     // console.log('new Date().getTime()', new Date().getTime())
     // console.log('lastCalledAt', lastCalledAt)
@@ -118,7 +118,7 @@ export default {
   },
   watch: {
     state:  function (val, oldVal) {
-      // console.log('watch state', val, oldVal)
+      console.log('watch state', val, oldVal)
       const {top, left, width, height, zIndex, rotate} = val
       this.top = top
       this.left = left
